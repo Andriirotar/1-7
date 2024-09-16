@@ -4,16 +4,14 @@
 
 using namespace std;
 
-// Клас для представлення машини
 class Car {
 public:
     Car(const string& make, const string& model, int year, double price)
         : make(make), model(model), year(year), price(price) {}
 
-    // Метод для відображення інформації про машину
     void display() const {
-        cout << "Make: " << make << ", Model: " << model
-             << ", Year: " << year << ", Price: $" << price << endl;
+        cout << "Зробити: " << make << ", Модель: " << model
+             << ", Рік: " << year << ", Ціна: $" << price << endl;
     }
 
 private:
@@ -23,7 +21,6 @@ private:
     double price;
 };
 
-// Клас для обліку машин в автосалоні
 class Showroom {
 public:
     void addCar(const Car& car) {
@@ -32,7 +29,7 @@ public:
 
     void listCars() const {
         if (cars.empty()) {
-            cout << "No cars available." << endl;
+            cout << "Автомобілів немає». << endl;
             return;
         }
 
@@ -50,26 +47,24 @@ int main() {
     int choice;
 
     while (true) {
-        cout << "1. Add Car\n2. List Cars\n3. Exit\n";
-        cout << "Enter your choice: ";
+        cout << "1. Додати автомобіль\n2. Список автомобілів\n3. Вийти\n";
+        cout << "Введіть ваш вибір: ";
         cin >> choice;
-        cin.ignore();  // Ігноруємо символ нового рядка, залишений у буфері
-
+        cin.ignore();  
         if (choice == 1) {
             string make, model;
             int year;
             double price;
 
-            cout << "Enter make: ";
+           cout << "Введіть make: ";
             getline(cin, make);
-            cout << "Enter model: ";
-            getline(cin, model);
-            cout << "Enter year: ";
-            cin >> year;
-            cout << "Enter price: ";
+            cout << "Введіть модель: ";
+            getline(cin, модель);
+            cout << "Введіть рік: ";
+            cin >> рік;
+            cout << "Введіть ціну: ";
             cin >> price;
-            cin.ignore();  // Ігноруємо символ нового рядка, залишений у буфері
-
+            cin.ignore();  
             Car newCar(make, model, year, price);
             showroom.addCar(newCar);
         } else if (choice == 2) {
@@ -77,7 +72,7 @@ int main() {
         } else if (choice == 3) {
             break;
         } else {
-            cout << "Invalid choice. Please try again." << endl;
+            cout << "Неправильний вибір. Спробуйте ще раз." << endl;
         }
     }
 
